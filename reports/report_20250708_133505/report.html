@@ -1,0 +1,80 @@
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>EHR Data Quality Report - 20250708_133505</title>
+            <style>
+                body { font-family: Arial, sans-serif; margin: 20px; }
+                .header { background-color: #f8f9fa; padding: 20px; border-radius: 5px; }
+                .section { margin: 20px 0; padding: 20px; border: 1px solid #ddd; border-radius: 5px; }
+                .quality-score { font-size: 24px; font-weight: bold; color: orange; }
+                table { border-collapse: collapse; width: 100%; }
+                th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+                th { background-color: #f8f9fa; }
+                .issue { color: #dc3545; }
+            </style>
+        </head>
+        <body>
+            <div class="header">
+                <h1>EHR Data Quality Report</h1>
+                <p>Generated on: 2025-07-08 13:35:05</p>
+                <p>Overall Quality Score: <span class="quality-score">67.5%</span></p>
+            </div>
+            
+            <div class="section">
+                <h2>Dataset Overview</h2>
+                <ul>
+                    <li>Total Records: 1000</li>
+                    <li>Time Range: 2024-07-09 09:48:04.773432 to 2025-07-08 05:59:04.773432</li>
+                    <li>Number of Patients: 1000</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2>Completeness Analysis</h2>
+                <img src="completeness.png" alt="Completeness Chart" style="max-width: 100%;">
+                <table>
+                    <tr>
+                        <th>Field</th>
+                        <th>Completion Rate</th>
+                        <th>Missing Count</th>
+                    </tr>
+                    <tr><td>patient_id</td><td>100.0%</td><td>0</td></tr><tr><td>timestamp</td><td>93.3%</td><td>67</td></tr><tr><td>age</td><td>100.0%</td><td>0</td></tr><tr><td>gender</td><td>98.3%</td><td>17</td></tr><tr><td>systolic_bp</td><td>90.9%</td><td>91</td></tr><tr><td>diastolic_bp</td><td>91.8%</td><td>82</td></tr><tr><td>heart_rate</td><td>100.0%</td><td>0</td></tr><tr><td>temperature</td><td>100.0%</td><td>0</td></tr><tr><td>diagnosis</td><td>100.0%</td><td>0</td></tr><tr><td>medications</td><td>100.0%</td><td>0</td></tr>
+                </table>
+            </div>
+            
+            <div class="section">
+                <h2>Data Distribution</h2>
+                <img src="vital_signs_distribution.png" alt="Vital Signs Distribution" style="max-width: 100%;">
+            </div>
+            
+            <div class="section">
+                <h2>Temporal Quality Trends</h2>
+                <img src="temporal_quality.png" alt="Temporal Quality Trends" style="max-width: 100%;">
+            </div>
+            
+            <div class="section">
+                <h2>Consistency Issues</h2>
+                <table>
+                    <tr>
+                        <th>Issue Type</th>
+                        <th>Count</th>
+                        <th>Details</th>
+                    </tr>
+                    <tr><td>gender_coding</td><td>17</td><td>Invalid gender coding, Invalid gender coding, Invalid gender coding...</td></tr><tr><td>vital_signs</td><td>26</td><td>systolic_bp out of range (70-180), systolic_bp out of range (70-180), systolic_bp out of range (70-180)...</td></tr><tr><td>medication_diagnosis</td><td>537</td><td>Inconsistent Lisinopril-Hypertension pair, Inconsistent Lisinopril-Hypertension pair, Inconsistent Lisinopril-Hypertension pair...</td></tr>
+                </table>
+            </div>
+            
+            <div class="section">
+                <h2>Format Issues</h2>
+                <table>
+                    <tr>
+                        <th>Field</th>
+                        <th>Issues</th>
+                    </tr>
+                    <tr><td>timestamp</td><td class='issue'>Invalid timestamp format in 67 records</td></tr>
+                </table>
+            </div>
+        </body>
+        </html>
+        
